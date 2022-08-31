@@ -1,4 +1,4 @@
-﻿using PagedList;
+﻿ using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -30,11 +30,11 @@ namespace WebBanHang.Areas.Admin.Controllers
             }
             if (!string.IsNullOrEmpty(SearchString))
             {
-                lstProduct = objwebBanHangEntities.Products.Where(n => n.Name.Contains(SearchString)).ToList();
+                lstProduct = objwebBanHangEntities.Product.Where(n => n.Name.Contains(SearchString)).ToList();
             }
             else
             {
-                lstProduct = objwebBanHangEntities.Products.ToList();
+                lstProduct = objwebBanHangEntities.Product.ToList();
             }
             ViewBag.CurrentFilter = SearchString;
             int pageSize = 4;
@@ -58,11 +58,11 @@ namespace WebBanHang.Areas.Admin.Controllers
                 {
                     string fileName = Path.GetFileNameWithoutExtension(objProduct.ImageUpLoad.FileName);
                     string extension = Path.GetExtension(objProduct.ImageUpLoad.FileName);
-                    fileName = fileName + "_" + long.Parse(DateTime.Now.ToString("yyyyMMddhhmmss")) + extension;
+                    fileName = fileName + extension;
                     objProduct.Avatar = fileName;
                     objProduct.ImageUpLoad.SaveAs(Path.Combine(Server.MapPath("~/Content/images/"), fileName));
                 }
-                objwebBanHangEntities.Products.Add(objProduct);
+                objwebBanHangEntities.Product.Add(objProduct);
                 objwebBanHangEntities.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -84,7 +84,7 @@ namespace WebBanHang.Areas.Admin.Controllers
                         objProduct.ImageUpLoad.SaveAs(Path.Combine(Server.MapPath("~/Content/images/"), fileName));
                     }
                     objProduct.CreatedOnUtc = DateTime.Now;
-                    objwebBanHangEntities.Products.Add(objProduct);
+                    objwebBanHangEntities.Product.Add(objProduct);
                     objwebBanHangEntities.SaveChanges();
                     return RedirectToAction("Index");
                 }
@@ -126,22 +126,22 @@ namespace WebBanHang.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var objProduct = objwebBanHangEntities.Products.Where(n => n.Id == id).FirstOrDefault();
+            var objProduct = objwebBanHangEntities.Product.Where(n => n.Id == id).FirstOrDefault();
             return View(objProduct);
         }
 
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            var objProduct = objwebBanHangEntities.Products.Where(n => n.Id == id).FirstOrDefault();
+            var objProduct = objwebBanHangEntities.Product.Where(n => n.Id == id).FirstOrDefault();
 
             return View(objProduct);
         }
         [HttpPost]
         public ActionResult Delete(Product objPro)
         {
-            var objProduct = objwebBanHangEntities.Products.Where(n => n.Id == objPro.Id).FirstOrDefault();
-            objwebBanHangEntities.Products.Remove(objProduct);
+            var objProduct = objwebBanHangEntities.Product.Where(n => n.Id == objPro.Id).FirstOrDefault();
+            objwebBanHangEntities.Product.Remove(objProduct);
             objwebBanHangEntities.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -149,7 +149,7 @@ namespace WebBanHang.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var objProduct = objwebBanHangEntities.Products.Where(n => n.Id == id).FirstOrDefault();
+            var objProduct = objwebBanHangEntities.Product.Where(n => n.Id == id).FirstOrDefault();
             return View(objProduct);
         }
         [HttpPost]

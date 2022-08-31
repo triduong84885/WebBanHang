@@ -14,11 +14,12 @@ namespace WebBanHang.Controllers
         public ActionResult Index()
         {
             var lstCategory = objwebBanHangEntities.Categories.ToList();
+
             return View(lstCategory);
         }
         public ActionResult ProductCategory(int Id)
         {
-            var listProduct = objwebBanHangEntities.Products.Where(n => n.CategoryId == Id).ToList();
+            var listProduct = objwebBanHangEntities.Product.Where(n => n.CategoryId == Id).ToList();
             return View(listProduct);
         }
     }

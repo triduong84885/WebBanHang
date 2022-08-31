@@ -9,7 +9,7 @@
     <meta name="description" content="Bootstrap e-commerce html template similar to Alibaba">
     <meta name="keywords" content="Online template, shop, theme, template, html, css, bootstrap 4">
 
-    <title>Website title - bootstrap alistyle html template</title>
+    <title>Dương Minh Trí</title>
 
     <link href="~/Content/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
@@ -21,7 +21,7 @@
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
 
     <!-- Font awesome 5 -->
-    <link href="fonts/fontawesome/~/Content/css/all.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" type="text/css" rel="stylesheet">
 
     <!-- custom style -->
     <link href="~/Content/css/ui.css" rel="stylesheet" type="text/css" />
@@ -50,16 +50,16 @@
                         <form action="#" class="search-header">
                             <div class="input-group w-100">
                                 <select class="custom-select border-right" name="category_name">
-                                    <option value="">All type</option>
-                                    <option value="codex">Special</option>
-                                    <option value="comments">Only best</option>
-                                    <option value="content">Latest</option>
+                                    <option value="">Tất cả các loại</option>
+                                    <option value="codex">Đặt biệt</option>
+                                    <option value="comments">Tốt nhất</option>
+                                    <option value="content">Muộn nhất</option>
                                 </select>
                                 <input type="text" class="form-control" placeholder="Search">
 
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
-                                        <i class="fa fa-search"></i> Search
+                                        <i class="fa fa-search"></i> Tìm kiếm
                                     </button>
                                 </div>
                             </div>
@@ -74,17 +74,17 @@
                                         <span class="notify">3</span>
                                     </div>
                                     @if (Session["idUser"] != null)
-                                                {
-                                                <a href="#">Trang Admin</a>
-                                                <a href="~/Home/Logout">Logout</a>
-                                                }
-                                    else
-                                                {
-                                                <a href="~/Home/Register">Đăng ký</a>
-                                                <a href="~/Home/Login ">Đăng nhập</a>
-                                                }
+                                    {
+                                          <a href="https://localhost:44331/Admin/Product" >Trang quản trị</a>
+                                          <li><a href="~/Home/Logout" >Đăng xuất</a></li> 
+                                     }
+                                     else
+                                     {
+                                           <a href="~/Home/Register">Đăng ký</a>
+                                           <a href="~/Home/Login ">Đăng nhập</a>
+                                     }
 
-                                    <small class="text"> My profile </small>
+                                    
                                 </a>
                             </div>
                             <div class="widget-header mr-3">
@@ -93,7 +93,7 @@
                                         <i class="fa fa-comment-dots"></i>
                                         <span class="notify">1</span>
                                     </div>
-                                    <small class="text"> Message </small>
+                                    <small class="text"> Tin nhắn </small>
                                 </a>
                             </div>
                             <div class="widget-header mr-3">
@@ -101,15 +101,15 @@
                                     <div class="icon-area">
                                         <i class="fa fa-store"></i>
                                     </div>
-                                    <small class="text"> Orders </small>
+                                    <small class="text"> Đơn hàng </small>
                                 </a>
                             </div>
                             <div class="widget-header">
-                                <a href="#" class="widget-view">
+                                <a href="@Url.Action("Detail","ShopingCart")" class="widget-view">
                                     <div class="icon-area">
                                         <i class="fa fa-shopping-cart"></i>
                                     </div>
-                                    <small class="text"> Cart </small>
+                                    <small class="text"> Giỏ hàng </small>
                                 </a>
                             </div>
                         </div> <!-- widgets-wrap.// -->
@@ -133,26 +133,26 @@
                             <div class="dropdown-menu dropdown-large">
                                 <nav class="row">
                                     <div class="col-6">
-                                        <a href="page-index-1.html">Home page 1</a>
-                                        <a href="page-index-2.html">Home page 2</a>
-                                        <a href="page-category.html">All category</a>
-                                        <a href="page-listing-large.html">Listing list</a>
-                                        <a href="page-listing-grid.html">Listing grid</a>
-                                        <a href="page-shopping-cart.html">Shopping cart</a>
-                                        <a href="page-detail-product.html">Product detail</a>
-                                        <a href="page-content.html">Page content</a>
-                                        <a href="page-user-login.html">Page login</a>
-                                        <a href="page-user-register.html">Page register</a>
+                                        <a href="page-index-1.html">Trang chủ</a>
+                                      
+                                        <a href="page-category.html">Tất cả danh mục</a>
+                                        <a href="page-listing-large.html">Danh sách niêm yết</a>
+                                        <a href="page-listing-grid.html">Lưới danh sách</a>
+                                        <a href="page-shopping-cart.html">Giỏ hàng</a>
+                                        <a href="page-detail-product.html">Chi tiết sản phẩm</a>
+                                        <a href="page-content.html">Trang nội dung</a>
+                                        <a href="page-user-login.html">Trang đăng nhập</a>
+                                        <a href="page-user-register.html">Trang đăng kí</a>
                                     </div>
                                     <div class="col-6">
-                                        <a href="page-profile-main.html">Profile main</a>
-                                        <a href="page-profile-orders.html">Profile orders</a>
-                                        <a href="page-profile-seller.html">Profile seller</a>
-                                        <a href="page-profile-wishlist.html">Profile wishlist</a>
-                                        <a href="page-profile-setting.html">Profile setting</a>
-                                        <a href="page-profile-address.html">Profile address</a>
-                                        <a href="rtl-page-index-1.html">RTL home page</a>
-                                        <a href="page-components.html" target="_blank">More components</a>
+                                        <a href="page-profile-main.html">Hồ sơ của bạn</a>
+                                        <a href="page-profile-orders.html">Hồ sơ đặt hàng</a>
+                                        <a href="page-profile-seller.html">Hồ sơ bán hàng</a>
+                                        <a href="page-profile-wishlist.html">Danh sách mong muốn</a>
+                                        <a href="page-profile-setting.html">Cài đặt thông tin</a>
+                                        <a href="page-profile-address.html">Địa chỉ chi tiết</a>
+                                        <a href="rtl-page-index-1.html"> Trang chủ RTL</a>
+                                        <a href="page-components.html" target="_blank">Nhiều thành phần</a>
                                     </div>
                                 </nav> <!--  row end .// -->
                             </div> <!--  dropdown-menu dropdown-large end.// -->
@@ -161,18 +161,18 @@
                             <a class="nav-link" href="@Url.Action("Index", "Category")">Tất cả danh mục</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Trade shows</a>
+                            <a class="nav-link" href="#">Triển lãm thương mại</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
+                            <a class="nav-link" href="#">Dịch vụ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sell with us</a>
+                            <a class="nav-link" href="#">Về chúng tôi</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-md-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Get the app</a>
+                            <a class="nav-link" href="#">Tải ứng dụng</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" data-toggle="dropdown">English</a>
@@ -197,47 +197,47 @@
             <section class="footer-top padding-y-lg text-white">
                 <div class="row">
                     <aside class="col-md col-6">
-                        <h6 class="title">Brands</h6>
+                        <h6 class="title">Nhãn hiệu</h6>
                         <ul class="list-unstyled">
-                            <li> <a href="#">Adidas</a></li>
-                            <li> <a href="#">Puma</a></li>
-                            <li> <a href="#">Reebok</a></li>
-                            <li> <a href="#">Nike</a></li>
+                            <li> <a href="#">Apple</a></li>
+                            <li> <a href="#">Samsung</a></li>
+                            <li> <a href="#">Xiaomi</a></li>
+                            <li> <a href="#">Google</a></li>
                         </ul>
                     </aside>
                     <aside class="col-md col-6">
-                        <h6 class="title">Company</h6>
+                        <h6 class="title">Công ty</h6>
                         <ul class="list-unstyled">
-                            <li> <a href="#">About us</a></li>
-                            <li> <a href="#">Career</a></li>
-                            <li> <a href="#">Find a store</a></li>
-                            <li> <a href="#">Rules and terms</a></li>
-                            <li> <a href="#">Sitemap</a></li>
+                            <li> <a href="#">Về chúng tôi</a></li>
+                            <li> <a href="#">Sự nghiệp</a></li>
+                            <li> <a href="#">Tìm một cửa hàng</a></li>
+                            <li> <a href="#">Quy tắc và điều khoản</a></li>
+                           
                         </ul>
                     </aside>
                     <aside class="col-md col-6">
-                        <h6 class="title">Help</h6>
+                        <h6 class="title">Hỗ trợ</h6>
                         <ul class="list-unstyled">
-                            <li> <a href="#">Contact us</a></li>
-                            <li> <a href="#">Money refund</a></li>
-                            <li> <a href="#">Order status</a></li>
-                            <li> <a href="#">Shipping info</a></li>
-                            <li> <a href="#">Open dispute</a></li>
+                            <li> <a href="#">Liên hệ chúng tôi</a></li>
+                            <li> <a href="#">Chính sách hoàn tiền</a></li>
+                            <li> <a href="#">Tình trạng đặt hàng</a></li>
+                            <li> <a href="#">Thông tin vận chuyển</a></li>
+                          
                         </ul>
                     </aside>
                     <aside class="col-md col-6">
-                        <h6 class="title">Account</h6>
+                        <h6 class="title">Tài khoản</h6>
                         <ul class="list-unstyled">
-                            <li> <a href="#"> User Login </a></li>
-                            <li> <a href="#"> User register </a></li>
-                            <li> <a href="#"> Account Setting </a></li>
-                            <li> <a href="#"> My Orders </a></li>
+                            <li> <a href="#"> Đăng nhập người dùng </a></li>
+                            <li> <a href="#"> Đăng kí người dùng </a></li>
+                            <li> <a href="#"> Thiết lặp tài khoản </a></li>
+                            <li> <a href="#">Đơn đặt hàng của tôi </a></li>
                         </ul>
                     </aside>
                     <aside class="col-md">
-                        <h6 class="title">Social</h6>
+                        <h6 class="title">Mạng xã hội</h6>
                         <ul class="list-unstyled">
-                            <li><a href="#"> <i class="fab fa-facebook"></i> Facebook </a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100004343838795"> <i class="fab fa-facebook"></i> Facebook </a></li>
                             <li><a href="#"> <i class="fab fa-twitter"></i> Twitter </a></li>
                             <li><a href="#"> <i class="fab fa-instagram"></i> Instagram </a></li>
                             <li><a href="#"> <i class="fab fa-youtube"></i> Youtube </a></li>
@@ -248,14 +248,14 @@
 
             <section class="footer-bottom text-center">
 
-                <p class="text-white">Privacy Policy - Terms of Use - User Information Legal Enquiry Guide</p>
-                <p class="text-muted"> &copy 2019 Company name, All rights reserved </p>
+                <p class="text-white">Chính sách bảo mật - Điều khoản sử dụng - Thông tin người dùng Hướng dẫn hỏi đáp pháp lý</p>
+                <p class="text-muted">Tri Store, Mọi quyền được bảo lưu</p>
                 <br>
             </section>
         </div><!-- //container -->
     </footer>
     <!-- ========================= FOOTER END // ========================= -->
-
+    
 
 
 </body>

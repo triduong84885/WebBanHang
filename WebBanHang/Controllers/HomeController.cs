@@ -17,10 +17,10 @@ namespace WebBanHang.Controllers
         {
             HomeModel objHomeModel = new HomeModel();
             objHomeModel.ListCategory = objwebBanHangEntities.Categories.ToList();
-            objHomeModel.ListProduct = objwebBanHangEntities.Products.ToList();
+
+            objHomeModel.ListProduct = objwebBanHangEntities.Product.ToList();
             return View(objHomeModel);
         }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -42,7 +42,7 @@ namespace WebBanHang.Controllers
         //POST: Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(User _user)
+        public ActionResult Register(Context.User _user)
         {
             if (ModelState.IsValid)
             {

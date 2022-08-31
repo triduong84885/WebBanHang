@@ -4,13 +4,12 @@
     ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-<div style="margin-left:20%;">
-    <h2>Chi tiết</h2>
+<div class="content-wrapper">
+    <h2>Chi tiết sản phẩm</h2>
 
     <div>
-        <h4>Product</h4>
         <hr />
-        <dl class="dl-horizontal">
+        <dl class="dl-horizontal" style="margin-left:150px">
             <dt>
                 @Html.DisplayNameFor(model => model.Name)
             </dt>
@@ -133,7 +132,7 @@
 
         </dl>
     </div>
-    <p>
+    <p    <p style="margin-left:150px">
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
         @Html.ActionLink("Back to List", "Index")
     </p>

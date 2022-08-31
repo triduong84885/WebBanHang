@@ -14,7 +14,7 @@ namespace WebBanHang.Controllers
         // GET: Product
         public ActionResult Detail(int Id)
         {
-            var objProduct = objwebBanHangEntities.Products.Where(n => n.Id == Id).FirstOrDefault();
+            var objProduct = objwebBanHangEntities.Product.Where(n => n.Id == Id).FirstOrDefault();
             return View(objProduct);
         }
     }
